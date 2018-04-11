@@ -1,0 +1,17 @@
+$ git config --global user.name "用户名"
+$ git config --global user.email "邮箱"
+
+生成ssh: ssh-keygen -t rsa -C "464062919@qq.com"
+
+
+上传代码：
+git add test.c
+git commit -m "hello world"
+git push origin master
+
+
+创建库
+cd github
+git clone git@github.com:ITblueboy/mycode.git
+
+git clone magic D:/github/github
