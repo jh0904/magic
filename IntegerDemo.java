@@ -1,36 +1,45 @@
 package cn.itcast_06;
 
 /*
- * ¿´³ÌÐòÐ´½á¹û
+ * çœ‹ç¨‹åºå†™ç»“æžœ
  * 
- * ×¢Òâ£ºIntegerµÄÊý¾ÝÖ±½Ó¸³Öµ£¬Èç¹ûÔÚ-128µ½127Ö®¼ä£¬»áÖ±½Ó´Ó»º³å³ØÀï»ñÈ¡Êý¾Ý
+ * æ³¨æ„ï¼šIntegerçš„æ•°æ®ç›´æŽ¥èµ‹å€¼ï¼Œå¦‚æžœåœ¨-128åˆ°127ä¹‹é—´ï¼Œä¼šç›´æŽ¥ä»Žç¼“å†²æ± é‡ŒèŽ·å–æ•°æ®
  */
 public class IntegerDemo {
 	public static void main(String[] args) {
-		Integer i1 = new Integer(127);
+		Integer i1 = new Integer(127);   
 		Integer i2 = new Integer(127);
-		System.out.println(i1 == i2);
-		System.out.println(i1.equals(i2));
+		System.out.println(i1 == i2);    //false 
+		System.out.println(i1.equals(i2));   //true 
 		System.out.println("-----------");
 
 		Integer i3 = new Integer(128);
 		Integer i4 = new Integer(128);
-		System.out.println(i3 == i4);
-		System.out.println(i3.equals(i4));
+		System.out.println(i3 == i4);  //false
+		System.out.println(i3.equals(i4)); //true 
 		System.out.println("-----------");
 
 		Integer i5 = 128;
 		Integer i6 = 128;
-		System.out.println(i5 == i6);
-		System.out.println(i5.equals(i6));
+		System.out.println(i5 == i6);  //false  ç¼“å†²æ± èŒƒå›´ä¸º-128-127ï¼Œè¶…å‡ºèŒƒå›´ç›¸å½“äºŽnew Integer(i);æ‰€ä»¥åœ°å€ä¸åŒã€‚
+		System.out.println(i5.equals(i6));  //true 
 		System.out.println("-----------");
 
 		Integer i7 = 127;
 		Integer i8 = 127;
-		System.out.println(i7 == i8);
-		System.out.println(i7.equals(i8));
+		System.out.println(i7 == i8);  //true å–çš„æ˜¯ç¼“å†²æ± é‡Œé¢çš„å€¼ï¼Œæ‰€ä»¥æ²¡æœ‰æ–°åˆ›å»ºå¯¹è±¡ï¼Œåœ°å€å€¼æ˜¯ä¸€æ ·çš„ï¼›
+		System.out.println(i7.equals(i8));  //true
 
-		// Í¨¹ý²é¿´Ô´Âë£¬ÎÒÃÇ¾ÍÖªµÀÁË£¬Õë¶Ô-128µ½127Ö®¼äµÄÊý¾Ý£¬×öÁËÒ»¸öÊý¾Ý»º³å³Ø£¬Èç¹ûÊý¾ÝÊÇ¸Ã·¶Î§ÄÚµÄ£¬Ã¿´Î²¢²»´´½¨ÐÂµÄ¿Õ¼ä
+		// é€šè¿‡æŸ¥çœ‹æºç ï¼Œæˆ‘ä»¬å°±çŸ¥é“äº†ï¼Œé’ˆå¯¹-128åˆ°127ä¹‹é—´çš„æ•°æ®ï¼Œåšäº†ä¸€ä¸ªæ•°æ®ç¼“å†²æ± ï¼Œå¦‚æžœæ•°æ®æ˜¯è¯¥èŒƒå›´å†…çš„ï¼Œæ¯æ¬¡å¹¶ä¸åˆ›å»ºæ–°çš„ç©ºé—´
 		// Integer ii = Integer.valueOf(127);
+		//IntegerCache.high=127  IntegerCache.low=-128
+		/*
+			public static Integer valueOf(int i){
+				assert IntegerCache.high>=127;
+				if(i>=IntegerCache.low && i<=IntegerCache.high)
+					return IntegerCache.cache[i+(-IntegerCache.low)];
+				return new Integer(i);
+			}
+		*/
 	}
 }
